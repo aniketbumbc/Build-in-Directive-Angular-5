@@ -1,0 +1,58 @@
+<h4 class="ui horizontal divider header"> Ng-Swtich Directive </h4>
+<h3 class="ui horizontal divider header"> Current Choice  {{choice}} </h3>
+
+<div class="ui raised segment">
+<ul [ngSwitch]="choice">
+<li *ngSwitchCase="1">First Mango</li>
+<li *ngSwitchCase="2">Second Banana</li>
+<li *ngSwitchCase="3">Third Apple</li>
+<li *ngSwitchCase="4">Forth Choice Again Banana</li>
+<li *ngSwitchCase="5">Fifth Ice-Cream</li>
+<li *ngSwitchDefault>No Choice</li>
+</ul>
+</div>
+<div style="margin-top: 20px;">
+<button class="ui primary button" (click)="nextChoice()"> Next Choice
+   </button>
+</div>
+
+<div [ngStyle]="{color:'red','background-color':'blue'}">
+Hello 
+</div>
+<br> 
+<div>
+  <span [ngStyle]="{color: color}">
+   Hello Aniket
+  </span>
+</div>
+
+<br>
+
+<div [ngClass]="{border:true}">
+  <span [style.font-size.px]="fontsize">
+   Hello Aniket
+  </span>
+</div>
+
+<br>
+
+<div>
+  Making  Color
+<input type="text" name="color" value="{{color}}" #colorinput>
+</div>
+<br>
+<div>
+    Making  Font
+  <input type="text" name="fontsize" value="{{fontsize}}" #fontinput>
+  </div>
+  <br>
+  <button class="ui primary button" (click)="apply(colorinput.value, fontinput.value)">
+    Apply settings
+  </button>
+  
+  <br>
+
+
+  <div *ngFor="let data of diffdata; let num= index" [ngClass]="{border:true}" [ngStyle]="{color:'white','background-color':'blue'}" >
+ <li>{{num}} -: {{data}}</li>
+  </div>
